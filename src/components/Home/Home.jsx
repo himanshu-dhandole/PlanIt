@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Calendar, MapPin, Users, Clock, Star, Shield, MessageSquare, Image, ArrowRight, Mail, PhoneCall, HelpCircle, CheckCircle, Globe, Zap, Share2, Heart, Award, Camera } from 'lucide-react';
+import { ChevronRight, Calendar, MapPin, Users, Clock, Star, Shield, MessageSquare, Image, ArrowRight, Mail, PhoneCall, HelpCircle, CheckCircle, Globe, Zap, Share2, Heart, Award, Camera, CalendarCheckIcon, CalendarCheck2Icon, BrainCircuit, UserRoundCheck } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const LandingPage = () => {
@@ -59,12 +59,12 @@ const LandingPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Globe, title: 'Global Reach', description: 'Connect with venues and vendors worldwide', color: 'from-purple-500 to-indigo-500' },
+              { icon: UserRoundCheck, title: 'Customer Satisfaction', description: 'Not satisfied? Get a 10% refund.', color: 'from-purple-500 to-indigo-500' },
               { icon: Zap, title: 'Instant Booking', description: 'Real-time availability and confirmations', color: 'from-indigo-500 to-blue-500' },
               { icon: Users, title: 'Team Collaboration', description: 'Work seamlessly with your entire event team', color: 'from-blue-500 to-purple-500' },
               { icon: Shield, title: 'Secure Payments', description: 'Protected transactions and fraud prevention', color: 'from-purple-500 to-blue-500' },
-              { icon: Share2, title: 'Social Integration', description: 'Share and promote events across platforms', color: 'from-indigo-500 to-purple-500' },
-              { icon: Camera, title: 'Virtual Tours', description: 'Explore venues from anywhere in the world', color: 'from-blue-500 to-indigo-500' }
+              { icon: CalendarCheck2Icon , title: 'Event Hosting', description: 'Self-host or hire a professional firm.', color: 'from-indigo-500 to-purple-500' },
+              { icon: BrainCircuit, title: 'AI based Event Planning', description: 'Share details, and AI plans for you.', color: 'from-blue-500 to-indigo-500' }
             ].map(({ icon: Icon, title, description, color }) => (
               <div key={title} className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl blur-xl" />

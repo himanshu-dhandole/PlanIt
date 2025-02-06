@@ -18,6 +18,8 @@ import EntertainmentPage from "./components/ServiceProviders/EntertainmentPage.j
 import SecurityPage from "./components/ServiceProviders/SecurityPage.jsx";
 import ChatInteractions from "./components/ChatInteractions/ChatInteractions.jsx";
 import HostProfile from "./components/Host/HostProfile.jsx";
+import AdminDashboard from "./components/Admin/AdminDashboard.jsx";
+import Logout from "./components/Auth/Logout.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -70,6 +72,10 @@ const router = createBrowserRouter([
       {
         path:"/hostprofile",
         element:<HostProfile/>,
+      },
+      {
+        path:"/admin",
+        element:<AdminDashboard/>
       }
     ],
   },
@@ -80,7 +86,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
-  },
+  },{
+    path:"/logout",
+    element:<Logout/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

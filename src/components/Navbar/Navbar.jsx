@@ -87,16 +87,16 @@ export default function Header() {
           {/* Login & Sign Up */}
           <div className="hidden items-center space-x-4 lg:flex">
             <Link
-              to="#"
+              to="/logout"
               className="rounded-full bg-slate-800/80 px-4 py-2 text-sm text-slate-300 transition-colors hover:text-white"
             >
-              Log in
+              Log out
             </Link>
             <Link
-              to="#"
+              to="/hostprofile"
               className="rounded-full bg-indigo-500 px-4 py-2 text-sm text-white transition-colors hover:bg-indigo-600"
             >
-              Get started
+              P
             </Link>
           </div>
         </nav>

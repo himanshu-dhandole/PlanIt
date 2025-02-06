@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { User, Building2, UtensilsCrossed, Users, Briefcase, Calendar, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const RoleSelection = () => {
   const [selectedRole, setSelectedRole] = useState(null);
@@ -67,10 +68,20 @@ const RoleSelection = () => {
                 <p className="text-sm text-gray-600 text-center">
                   {role.description}
                 </p>
-                <button>Submit</button>
+                
               </div>
             );
           })}
+        </div>
+        <div className='flex justify-center'>
+        <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                className="w-[20%] py-3 px-4 mt-5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-200 shadow-md "
+              >
+                Submit
+              </motion.button>
         </div>
       </div>
     </div>

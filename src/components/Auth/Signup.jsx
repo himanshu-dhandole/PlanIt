@@ -5,28 +5,29 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import apiClient from './ApiClient';
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const [error, setError] = useState("");
 
-  const login = async ({ email, password }) => {
-    try {
-      const response = await apiClient.post(`${import.meta.env.BASE_URL}/auth/login`, { email, password });
-      const accessToken = await response.data.data.accessToken;
-      console.log("accessToken", accessToken);
-      if (!accessToken) {
-        setError("Invalid email or password");
-        navigate('/login');
-      }
-      localStorage.setItem('accessToken', accessToken);
-      if (accessToken) {
-        navigate('/');
-      }
-    } catch (error) {
-      console.error(error);
-      setError('Invalid credentials. Please try again.');
-    }
+  const signup = async ({ email, password }) => {
+    // try {
+    //   const response = await apiClient.post(`${import.meta.env.BASE_URL}/auth/signup`, { email, password });
+    //   const accessToken = await response.data.data.accessToken;
+    //   console.log("accessToken", accessToken);
+    //   if (!accessToken) {
+    //     setError("Invalid email or password");
+    //     navigate('/signup');
+    //   }
+    //   localStorage.setItem('accessToken', accessToken);
+    //   if (accessToken) {
+    //     navigate('/');
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    //   setError('Invalid credentials. Please try again.');
+    // }
+    console.log("signup")
   };
 
   return (
@@ -61,7 +62,7 @@ const Login = () => {
               </motion.p>
             )}
 
-            <form onSubmit={handleSubmit(login)} className="space-y-6">
+            <form onSubmit={handleSubmit(signup)} className="space-y-6">
             <div className="space-y-2">
                   <label className="text-gray-700 text-sm font-medium">Full Name</label>
                   <input
@@ -101,7 +102,7 @@ const Login = () => {
                 type="submit"
                 className="w-full py-3 px-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-200 shadow-md"
               >
-                Login
+                signup
               </motion.button>
             </form>
           </div>
@@ -111,4 +112,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

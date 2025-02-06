@@ -29,7 +29,7 @@ const dummyCaterers = [
 const CatererCard = ({ caterer }) => {
   const navigate = useNavigate();
   const handleCaterer = () => {
-    navigate(`/caterer-profile/${caterer.catererId}`);
+    navigate(`/catererprofile/${caterer.catererId}`);
   };
 
   return (

@@ -29,7 +29,7 @@ const dummyDecorators = [
 const DecoratorCard = ({ decorator }) => {
   const navigate = useNavigate();
   const handleDecoratorClick = () => {
-    navigate(`/decorator-profile/${decorator.decoratorId}`);
+    navigate(`/decoratorprofile/${decorator.decoratorId}`);
   };
 
   return (

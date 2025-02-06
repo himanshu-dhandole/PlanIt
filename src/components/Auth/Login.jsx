@@ -87,6 +87,8 @@ const Login = () => {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 className="w-full py-3 px-4 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all duration-200 shadow-md"
+                  onClick={()=>navigate('/')}
+
               >
                 Login
               </motion.button>

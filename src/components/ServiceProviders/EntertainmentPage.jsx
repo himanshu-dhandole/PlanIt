@@ -29,7 +29,7 @@ const dummyEntertainers = [
 const EntertainerCard = ({ entertainer }) => {
   const navigate = useNavigate();
   const handleEntertainerClick = () => {
-    navigate(`/entertainment-profile/${entertainer.entertainerId}`);
+    navigate(`/entertainmentprofile/${entertainer.entertainerId}`);
   };
 
   return (

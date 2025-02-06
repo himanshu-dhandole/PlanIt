@@ -32,7 +32,7 @@ const dummySecurityServices = [
 const SecurityCard = ({ security }) => {
   const navigate = useNavigate();
   const handleSecurityClick = () => {
-    navigate(`/security-profile/${security.securityId}`);
+    navigate(`/securityprofile/${security.securityId}`);
   };
 
   return (

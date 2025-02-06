@@ -20,6 +20,10 @@ import ChatInteractions from "./components/ChatInteractions/ChatInteractions.jsx
 import HostProfile from "./components/Host/HostProfile.jsx";
 import AdminDashboard from "./components/Admin/AdminDashboard.jsx";
 import Logout from "./components/Auth/Logout.jsx";
+import CatererProfile from "./components/ServiceProviders/CatererProfile.jsx";
+import DecoratorProfile from "./components/ServiceProviders/DecoratorProfile.jsx";
+import EntertainmentProfile from "./components/ServiceProviders/EntertainmentProfile.jsx";
+import SecurityProfile from "./components/ServiceProviders/SecurityProfile.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -76,6 +80,22 @@ const router = createBrowserRouter([
       {
         path:"/admin",
         element:<AdminDashboard/>
+      },
+      {
+        path:"/catererprofile/:catererId",
+        element:<CatererProfile/>
+      },
+      {
+        path:"/decoratorprofile/:decoratorId",
+        element:<DecoratorProfile/>
+      },
+      {
+        path:"/entertainmentprofile/:entertainmentId",
+        element:<EntertainmentProfile/>
+      },
+      {
+        path:"/securityprofile/:securityId",
+        element:<SecurityProfile/>
       }
     ],
   },

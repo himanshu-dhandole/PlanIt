@@ -78,7 +78,7 @@ const OrganizerDashboard = () => {
                         <div className="text-gray-400 space-y-2">
                             <div><User className="inline-block mr-1" size={16} /> {profile.name}</div>
                             <div><FileText className="inline-block mr-1" size={16} /> {profile.bio}</div>
-                            <div><MapPin className="inline-block mr-1" size={16} /> {profile.location}</div>
+                            <div> {profile.location}</div>
                             <div><MessageSquare className="inline-block mr-1" size={16} /> {profile.email}</div>
                         </div>
                     </div>
@@ -203,7 +203,7 @@ const OrganizerDashboard = () => {
                     <div className="bg-gray-800 rounded-md p-4 mb-8">
                         <div className="flex items-center justify-between">
                             <div className="text-gray-400">Current Balance</div>
-                            <div className="text-3xl font-bold">${profile.balance.toFixed(2)}</div>
+                            <div className="text-3xl font-bold">₹{profile.balance.toFixed(2)}</div>
                         </div>
                     </div>
 
@@ -230,7 +230,7 @@ const OrganizerDashboard = () => {
                                         <td className="px-5 py-5  border-b border-gray-700  text-sm">{transaction.description}</td>
                                         <td className="px-5 py-5  border-b border-gray-700  text-sm">
                                             <span className={transaction.type === "Credit" ? "text-green-500" : "text-red-500"}>
-                                                {transaction.type === "Credit" ? "+" : "-"}${Math.abs(transaction.amount).toFixed(2)}
+                                                {transaction.type === "Credit" ? "+" : "-"}₹{Math.abs(transaction.amount).toFixed(2)}
                                             </span>
                                         </td>
                                     </tr>

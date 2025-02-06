@@ -24,6 +24,7 @@ import CatererProfile from "./components/ServiceProviders/CatererProfile.jsx";
 import DecoratorProfile from "./components/ServiceProviders/DecoratorProfile.jsx";
 import EntertainmentProfile from "./components/ServiceProviders/EntertainmentProfile.jsx";
 import SecurityProfile from "./components/ServiceProviders/SecurityProfile.jsx";
+import ParticipantProfile from "./components/Participant/ParticipantProfile.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
       {
         path:"/securityprofile/:securityId",
         element:<SecurityProfile/>
+      },
+      {
+      path:"/profile",
+        element:<ParticipantProfile/>
       }
     ],
   },

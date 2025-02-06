@@ -6,12 +6,12 @@ import { CalendarDays, Users, Building2, ArrowRight, CheckCircle2, Rocket, Shiel
 
 export default function Footer() {
     const GlassmorphicCard = ({ children, className = "" }) => (
-        <div className={`backdrop-blur-lg bg-white/30 border border-white/30 shadow-lg rounded-xl ${className}`}>
+        <div className={` bg-zinc-900 border border-zinc-700/50 shadow-lg  ${className}`}>
           {children}
         </div>
       );
     return (
-        <footer className="border-t border-white/30">
+        <footer className="border-t border-zinc-700">
         <GlassmorphicCard className="rounded-none">
           <div className="container mx-auto px-6 py-8">
             <div className="flex flex-col md:flex-row justify-between">
@@ -21,11 +21,11 @@ export default function Footer() {
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <Rocket className="h-8 w-8 text-blue-600" />
+                    <Rocket className="h-8 w-8 text-purple-500" />
                   </motion.div>
-                  <span className="ml-2 text-xl font-bold text-gray-800">PlanIt</span>
+                  <span className="ml-2 text-xl font-bold text-white">PlanIt</span>
                 </div>
-                <p className="mt-4 text-gray-600 max-w-sm">
+                <p className="mt-4 text-zinc-400 max-w-sm">
                   Empowering event professionals with smart tools and global connections.
                 </p>
               </div>
@@ -37,11 +37,11 @@ export default function Footer() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <h3 className="text-gray-900 font-semibold mb-4">{section}</h3>
+                    <h3 className="text-white font-semibold mb-4">{section}</h3>
                     <ul className="space-y-2">
                       {['Link 1', 'Link 2', 'Link 3'].map((link, i) => (
                         <li key={i}>
-                          <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                          <a href="#" className="text-zinc-400 hover:text-purple-500 transition-colors">
                             {link}
                           </a>
                         </li>
@@ -51,8 +51,8 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-            <div className="mt-8 pt-8 border-t border-white/30">
-              <p className="text-center text-gray-600">
+            <div className="mt-8 pt-8 border-t border-zinc-700">
+              <p className="text-center text-zinc-400">
                 © 2025 PlanIt. All rights reserved.
               </p>
             </div>

@@ -4,9 +4,9 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const LandingPage = () => {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-gradient-to-br from-black via-slate-900 to-slate-800 text-white">
       {/* Hero Section - Full Viewport */}
-      <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-black via-slate-900 to-slate-800">
+      <section className="min-h-screen relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full filter blur-3xl animate-pulse" />
@@ -44,7 +44,7 @@ const LandingPage = () => {
       </section>
 
       {/* Features Section - Full Viewport */}
-      <section className="min-h-screen bg-gradient-to-br from-slate-900 via-black to-slate-900 relative overflow-hidden py-20">
+      <section className="min-h-screen relative overflow-hidden py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-6">
@@ -82,7 +82,7 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="min-h-screen bg-gradient-to-br from-slate-900 to-black py-20 relative">
+      <section className="min-h-screen py-20 relative">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-6">
@@ -117,7 +117,7 @@ const LandingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-black relative overflow-hidden flex items-center">
+      <section className="min-h-screen relative overflow-hidden flex items-center">
         <div className="absolute inset-0 bg-black/50" />
         <div className="max-w-7xl mx-auto px-4 py-20 relative">
           <div className="text-center">

@@ -1,23 +1,32 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Rocket } from "lucide-react";
+
+const GlassmorphicCard = ({ children, className = "" }) => (
+  <div className={`backdrop-blur-lg bg-slate-900/50 border border-slate-700/50 shadow-lg rounded-xl ${className}`}>
+    {children}
+  </div>
+);
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="shadow sticky top-0 z-50">
-      <nav className="bg-gray-900 border-b border-gray-800 px-4 lg:px-6 py-2.5">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-
+    <header className="sticky top-0 z-50 bg-black">
+      <GlassmorphicCard className="rounded-t-xl">
+        <nav className="px-4 lg:px-6 py-2.5 flex justify-between items-center mx-auto max-w-screen-xl">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="" className="mr-3 h-12" alt="Logo" />
+            <div className="transition-transform hover:scale-110 duration-300">
+              <Rocket className="h-8 w-8 text-indigo-400" />
+            </div>
+            <span className="ml-2 text-xl font-bold text-white">PlanIt</span>
           </Link>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-gray-300 hover:text-white focus:outline-none"
+            className="lg:hidden text-slate-300 hover:text-indigo-400 focus:outline-none"
           >
             {isOpen ? (
               <svg
@@ -25,14 +34,13 @@ export default function Header() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M6 18L18 6M6 6l12 12"
-                ></path>
+                />
               </svg>
             ) : (
               <svg
@@ -40,141 +48,97 @@ export default function Header() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
+                />
               </svg>
             )}
           </button>
 
           {/* Desktop Links */}
           <div className="hidden lg:flex lg:items-center lg:space-x-6">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `text-sm px-4 py-2 rounded-lg duration-200 ${isActive ? "text-indigo-400" : "text-gray-300"
-                } hover:text-white`
-              }
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `text-sm px-4 py-2 rounded-lg duration-200 ${isActive ? "text-indigo-400" : "text-gray-300"
-                } hover:text-white`
-              }
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `text-sm px-4 py-2 rounded-lg duration-200 ${isActive ? "text-indigo-400" : "text-gray-300"
-                } hover:text-white`
-              }
-            >
-              Contact Us
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `text-sm px-4 py-2 rounded-lg duration-200 ${isActive ? "text-indigo-400" : "text-gray-300"
-                } hover:text-white`
-              }
-            >
-              About Us
-            </NavLink>
+            {['Home', 'About', 'Services', 'Contact'].map((item) => (
+              <NavLink
+                key={item}
+                to={`/${item.toLowerCase()}`}
+                className={({ isActive }) =>
+                  `text-sm px-4 py-2 rounded-lg duration-200 ${
+                    isActive 
+                      ? "text-indigo-400 bg-slate-800/50" 
+                      : "text-slate-300 hover:text-indigo-400 hover:bg-slate-800/30"
+                  }`
+                }
+              >
+                {item}
+              </NavLink>
+            ))}
           </div>
 
           {/* Login & Sign Up */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               to="#"
-              className="text-gray-300 hover:text-white bg-gray-800 rounded-full text-sm px-4 py-2 transition-colors"
+              className="text-slate-300 hover:text-white bg-slate-800/80 rounded-full text-sm px-4 py-2 transition-colors"
             >
               Log in
             </Link>
             <Link
               to="#"
-              className="rounded-full text-white bg-indigo-600 hover:bg-indigo-700 text-sm px-4 py-2 transition-colors"
+              className="rounded-full text-white bg-indigo-500 hover:bg-indigo-600 text-sm px-4 py-2 transition-colors"
             >
               Get started
             </Link>
           </div>
-        </div>
+        </nav>
+      </GlassmorphicCard>
 
-        {/* Mobile Menu */}
-        <div className={`lg:hidden ${isOpen ? "block" : "hidden"}`}>
-          <ul className="flex flex-col mt-4 font-medium space-y-2 bg-gray-800 p-4 rounded-lg">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `block text-center py-2 px-4 rounded-lg duration-200 ${isActive ? "text-indigo-400" : "text-gray-300"
-                  } hover:text-white`
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  `block text-center py-2 px-4 rounded-lg duration-200 ${isActive ? "text-indigo-400" : "text-gray-300"
-                  } hover:text-white`
-                }
-              >
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  `block text-center py-2 px-4 rounded-lg duration-200 ${isActive ? "text-indigo-400" : "text-gray-300"
-                  } hover:text-white`
-                }
-              >
-                Contact Us
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  `block text-center py-2 px-4 rounded-lg duration-200 ${isActive ? "text-indigo-400" : "text-gray-300"
-                  } hover:text-white`
-                }
-              >
-                About Us
-              </NavLink>
-            </li>
+      {/* Mobile Menu */}
+      <div
+        className={`lg:hidden ${isOpen ? "block" : "hidden"}`}
+        onClick={() => setIsOpen(false)}
+      >
+        <GlassmorphicCard className="fixed top-16 left-0 right-0 z-40 p-4">
+          <ul className="flex flex-col mt-4 font-medium space-y-2">
+            {['Home', 'About', 'Services', 'Contact'].map((item) => (
+              <li key={item}>
+                <NavLink
+                  to={`/${item.toLowerCase()}`}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    `block text-center py-2 px-4 rounded-lg duration-200 ${
+                      isActive 
+                        ? "text-indigo-400 bg-slate-800/50" 
+                        : "text-slate-300 hover:text-indigo-400 hover:bg-slate-800/30"
+                    }`
+                  }
+                >
+                  {item}
+                </NavLink>
+              </li>
+            ))}
           </ul>
 
           {/* Mobile Buttons */}
           <div className="flex flex-col items-center mt-4 space-y-2">
             <Link
               to="#"
-              className="text-gray-300 hover:text-white bg-gray-800 rounded-full text-sm px-4 py-2 transition-colors"
+              className="w-full text-center text-slate-300 hover:text-white bg-slate-800/80 rounded-full text-sm px-4 py-2 transition-colors"
             >
               Log in
             </Link>
             <Link
               to="#"
-              className="rounded-full text-white bg-indigo-600 hover:bg-indigo-700 text-sm px-4 py-2 transition-colors"
+              className="w-full text-center rounded-full text-white bg-indigo-500 hover:bg-indigo-600 text-sm px-4 py-2 transition-colors"
             >
               Get started
             </Link>
           </div>
-        </div>
-      </nav>
+        </GlassmorphicCard>
+      </div>
     </header>
   );
 }

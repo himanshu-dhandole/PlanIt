@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Layout from "./components/Layout/Layout.jsx";// Import the custom Layout component
+import Layout from "./components/Layout/Layout.jsx"; // Import the custom Layout component
 import Signup from "./components/Auth/Signup.jsx";
 import Login from "./components/Auth/Login.jsx";
 import Home from "./components/Home/Home.jsx";
@@ -13,6 +13,11 @@ import Organizer from "./components/Organizers/organizer.jsx";
 import ServiceSelection from "./components/ServiceProviders/SelectServicePage.jsx";
 import CaterersSearchPage from "./components/ServiceProviders/CaterersPage.jsx";
 import OrganizerDashboard from "./components/Organizers/OrganizerDashboard.jsx";
+import DecoratorsPage from "./components/ServiceProviders/DecoratorsPage.jsx";
+import EntertainmentPage from "./components/ServiceProviders/EntertainmentPage.jsx";
+import SecurityPage from "./components/ServiceProviders/SecurityPage.jsx";
+import ChatInteractions from "./components/ChatInteractions/ChatInteractions.jsx";
+import HostProfile from "./components/Host/HostProfile.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,46 +25,66 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
-        path:"/roles",
-        element:<RoleSelection/>
+        path: "/roles",
+        element: <RoleSelection />,
       },
       {
-        path:"/organizersearchpage",
-        element:<OrganizerSearchpage/>
+        path: "/organizersearchpage",
+        element: <OrganizerSearchpage />,
       },
       {
-        path:"/organizer",
-        element:<Organizer/>
+        path: "/organizer",
+        element: <Organizer />,
       },
       {
-        path:"/serviceproviders",
-        element:<ServiceSelection/>
+        path: "/serviceproviders",
+        element: <ServiceSelection />,
       },
       {
-        path:"/services/caterers",
-        element:<CaterersSearchPage/>
+        path: "/services/caterers",
+        element: <CaterersSearchPage />,
+      },
+      {
+        path: "/services/decorators",
+        element: <DecoratorsPage />,
+      },
+      {
+        path: "/services/entertainment",
+        element: <EntertainmentPage />,
+      },
+      {
+        path: "/services/security",
+        element: <SecurityPage/>,
       },
       {
         path: "/organizerdashboard",
-        element: <OrganizerDashboard/>,
+        element: <OrganizerDashboard />,
+      },
+      {
+        path: "/chat",
+        element: <ChatInteractions/>,
+      },
+      {
+        path:"/hostprofile",
+        element:<HostProfile/>,
       }
-    ]
+    ],
   },
   {
-  path: "/login",
-  element: <Login />
+    path: "/login",
+    element: <Login />,
   },
   {
-    path:"/signup",
-    element: <Signup />
-  }
+    path: "/signup",
+    element: <Signup />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

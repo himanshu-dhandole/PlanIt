@@ -42,7 +42,7 @@ const CatererCard = ({ caterer }) => {
           {caterer.specialties.map((dish, index) => (
             <span
               key={index}
-              className="px-3 py-1 rounded-full bg-green-500/10 text-emerald-300 text-sm"
+              className="px-3 py-1 rounded-full bg-green-500/10 text-purple-300 text-sm"
             >
               {dish}
             </span>
@@ -71,7 +71,7 @@ const CatererCard = ({ caterer }) => {
         </div>
 
         <button
-          className="w-full py-2.5 rounded-xl bg-green-500/20 text-white font-medium transition-all duration-300 hover:bg-green-500/30"
+          className="w-full py-2.5 rounded-xl bg-purple-500/20 text-white font-medium transition-all duration-300 hover:bg-green-500/30"
           onClick={handleCaterer}
         >
           View Details

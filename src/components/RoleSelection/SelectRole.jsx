@@ -67,6 +67,7 @@ const RoleSelection = () => {
                 <p className="text-sm text-gray-600 text-center">
                   {role.description}
                 </p>
+                <button>Submit</button>
               </div>
             );
           })}

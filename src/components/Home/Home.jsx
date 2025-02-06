@@ -16,11 +16,11 @@ const LandingPage = () => {
 
         <div className="max-w-7xl mx-auto px-4 py-20 relative">
           <div className="space-y-8 text-center">
-            <div className="inline-flex items-center px-6 py-2 bg-purple-900/50 backdrop-blur-sm rounded-full text-purple-300 font-medium border border-purple-700/50">
+            {/* <div className="inline-flex items-center px-6 py-2 bg-purple-900/50 backdrop-blur-sm rounded-full text-purple-300 font-medium border border-purple-700/50">
               <Star className="w-4 h-4 mr-2" />
-              The Future of Event Planning
-            </div>
-            <h1 className="text-7xl font-bold tracking-tight leading-tight">
+              ajj konse color chaddi pehni hai
+            </div> */}
+            <h1 className="pt-24 text-7xl font-bold tracking-tight leading-tight">
               Where Vision Meets
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-400">

@@ -39,7 +39,7 @@ const ServiceSelection = () => {
     navigate(`/services/${selectedRole}`)
   };
   return (
-    <div className="min-h-screen w-full bg-gray-900 p-6 text-white">
+    <div className="pt-24 min-h-screen w-full bg-gray-900 p-6 text-white">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-4 text-center text-gray-100">
           Select Your Services Providers
@@ -75,7 +75,7 @@ const ServiceSelection = () => {
             );
           })}
         </div>
-        <div className='flex justify-center'>
+        <div className='pt-20 flex justify-center'>
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

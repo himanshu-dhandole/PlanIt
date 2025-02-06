@@ -16,7 +16,83 @@ const Chat = ({ contact, onClose }) => {
       messageContent: "Hey, how's your job search going?",
       timestamp: "2024-01-12T10:30:00"
     },
-    // ... other messages
+    {
+      messageId: 2,
+      sender: 2,
+      receiver: 1,
+      messageContent: "It's going alright. Had a couple of interviews this week.",
+      timestamp: "2024-01-12T10:32:00"
+    },
+    {
+      messageId: 3,
+      sender: 1,
+      receiver: 2,
+      messageContent: "That's great! Any leads?",
+      timestamp: "2024-01-12T10:35:00"
+    },
+    {
+      messageId: 4,
+      sender: 2,
+      receiver: 1,
+      messageContent: "Yeah, one company seems really interested. Fingers crossed!",
+      timestamp: "2024-01-12T10:40:00"
+    },
+    {
+      messageId: 5,
+      sender: 1,
+      receiver: 2,
+      messageContent: "Good luck! Let me know how it goes.",
+      timestamp: "2024-01-12T10:45:00"
+    },
+    {
+      messageId: 6,
+      sender: 2,
+      receiver: 1,
+      messageContent: "Will do, thanks!",
+      timestamp: "2024-01-12T10:50:00"
+    },
+    {
+      messageId: 7,
+      sender: 1,
+      receiver: 2,
+      messageContent: "By the way, have you looked into system design concepts?",
+      timestamp: "2024-01-12T11:00:00"
+    },
+    {
+      messageId: 8,
+      sender: 2,
+      receiver: 1,
+      messageContent: "Not really, what's that about?",
+      timestamp: "2024-01-12T11:05:00"
+    },
+    {
+      messageId: 9,
+      sender: 1,
+      receiver: 2,
+      messageContent: "It's important for senior roles. Covers scalability, architecture, etc.",
+      timestamp: "2024-01-12T11:10:00"
+    },
+    {
+      messageId: 10,
+      sender: 2,
+      receiver: 1,
+      messageContent: "Oh, good to know. Any resources you recommend?",
+      timestamp: "2024-01-12T11:15:00"
+    },
+    {
+      messageId: 11,
+      sender: 1,
+      receiver: 2,
+      messageContent: "Yeah, check out Grokking the System Design Interview. It's a good start.",
+      timestamp: "2024-01-12T11:20:00"
+    },
+    {
+      messageId: 12,
+      sender: 2,
+      receiver: 1,
+      messageContent: "Awesome, I'll check it out. Thanks a lot!",
+      timestamp: "2024-01-12T11:25:00"
+    }
   ];
 
   useEffect(() => {
@@ -39,9 +115,9 @@ const Chat = ({ contact, onClose }) => {
   };
 
   const formatTime = (timestamp) => {
-    return new Date(timestamp).toLocaleTimeString([], { 
-      hour: '2-digit', 
-      minute: '2-digit' 
+    return new Date(timestamp).toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit'
     });
   };
 
@@ -54,30 +130,30 @@ const Chat = ({ contact, onClose }) => {
   };
 
   return (
-    <motion.div 
-      className="  w-full flex flex-col h-[545px] bg-gray-900/40 backdrop-blur-xl rounded-lg border border-emerald-700/30"
+    <motion.div
+      className="w-full flex flex-col h-[545px] bg-gray-900/40 backdrop-blur-xl rounded-lg border border-purple-700/30"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
     >
       {/* Chat Header */}
-      <motion.div 
-        className="p-4 bg-gray-800/30 backdrop-blur-sm border-b border-emerald-700/30 rounded-t-lg"
+      <motion.div
+        className="p-4 bg-gray-800/30 backdrop-blur-sm border-b border-purple-700/30 rounded-t-lg"
         initial={{ y: -20 }}
         animate={{ y: 0 }}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <motion.div 
+            <motion.div
               className="relative"
               whileHover={{ scale: 1.1 }}
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center text-white">
+              <div className="w-10 h-10 bg-gradient-to-br from-gray-950 to-black rounded-full flex items-center justify-center text-white">
                 {contact ? getInitials(contact.name) : <User className="w-6 h-6" />}
               </div>
               {contact?.online && (
-                <motion.div 
-                  className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-gray-800"
+                <motion.div
+                  className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-purple-400 rounded-full border-2 border-gray-800"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                 />
@@ -91,22 +167,22 @@ const Chat = ({ contact, onClose }) => {
           <div className="flex items-center space-x-2">
             {contact && (
               <>
-                <motion.button 
-                  className="p-2 hover:bg-emerald-900/30 rounded-full text-gray-300"
+                <motion.button
+                  className="p-2 hover:bg-purple-900/30 rounded-full text-gray-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Phone className="w-5 h-5" />
                 </motion.button>
-                <motion.button 
-                  className="p-2 hover:bg-emerald-900/30 rounded-full text-gray-300"
+                <motion.button
+                  className="p-2 hover:bg-purple-900/30 rounded-full text-gray-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Video className="w-5 h-5" />
                 </motion.button>
-                <motion.button 
-                  className="p-2 hover:bg-emerald-900/30 rounded-full text-gray-300"
+                <motion.button
+                  className="p-2 hover:bg-purple-900/30 rounded-full text-gray-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -114,8 +190,8 @@ const Chat = ({ contact, onClose }) => {
                 </motion.button>
               </>
             )}
-            <motion.button 
-              className="p-2 hover:bg-emerald-900/30 rounded-full text-gray-300"
+            <motion.button
+              className="p-2 hover:bg-purple-900/30 rounded-full text-gray-300"
               onClick={onClose}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -140,7 +216,7 @@ const Chat = ({ contact, onClose }) => {
               <motion.div
                 className={`max-w-[70%] p-3 rounded-2xl ${
                   msg.sender === currentUser.id
-                    ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white'
+                    ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white'
                     : 'bg-gray-700/50 backdrop-blur-sm text-gray-100'
                 }`}
                 whileHover={{ scale: 1.02 }}
@@ -157,8 +233,8 @@ const Chat = ({ contact, onClose }) => {
 
       {/* Message Input */}
       {contact && (
-        <motion.div 
-          className="p-4 bg-gray-800/30 backdrop-blur-sm border-t border-emerald-700/30"
+        <motion.div
+          className="p-4 bg-gray-800/30 backdrop-blur-sm border-t border-purple-700/30"
           initial={{ y: 20 }}
           animate={{ y: 0 }}
         >
@@ -166,7 +242,7 @@ const Chat = ({ contact, onClose }) => {
             <input
               type="text"
               placeholder="Type a message..."
-              className="flex-1 p-3 bg-gray-900/50 text-gray-100 rounded-xl border border-emerald-700/30 focus:outline-none focus:border-emerald-500/50 placeholder-gray-500"
+              className="flex-1 p-3 bg-gray-900/50 text-gray-100 rounded-xl border border-purple-700/30 focus:outline-none focus:border-purple-500/50 placeholder-gray-500"
               value={messageInput}
               onChange={(e) => setMessageInput(e.target.value)}
               onKeyPress={(e) => {
@@ -175,8 +251,8 @@ const Chat = ({ contact, onClose }) => {
                 }
               }}
             />
-            <motion.button 
-              className="p-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white rounded-xl transition-colors"
+            <motion.button
+              className="p-3 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-xl transition-colors"
               onClick={handleSendMessage}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

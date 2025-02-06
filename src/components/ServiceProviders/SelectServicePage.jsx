@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { User, Building2, UtensilsCrossed, Users, Briefcase, Calendar, Star, Flower, MicVocal, LucideSquareChevronUp, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
-
+import { useNavigate } from 'react-router-dom';
 const ServiceSelection = () => {
   const [selectedRole, setSelectedRole] = useState(null);
-
+    const navigate = useNavigate();
   const roles = [
     {
       id: 'Caterers',
@@ -35,7 +35,9 @@ const ServiceSelection = () => {
       accent: 'from-purple-600 to-purple-800'
     }
   ];
-
+  const handleSubmit = (e) => {
+    navigate(`/services/${selectedRole}`)
+  };
   return (
     <div className="min-h-screen w-full bg-gray-900 p-6 text-white">
       <div className="max-w-4xl mx-auto">
@@ -43,7 +45,7 @@ const ServiceSelection = () => {
           Select Your Services Providers
         </h2>
         <p className="text-center text-gray-400 mb-8">
-        Select the service you need to integrate for your event management.
+          Select the service you need to integrate for your event management
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -79,6 +81,7 @@ const ServiceSelection = () => {
             whileTap={{ scale: 0.98 }}
             type="submit"
             className="w-[20%] py-3 px-4 mt-5 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all duration-200 shadow-md "
+            onClick={(e)=>handleSubmit(e)}
           >
             Submit
           </motion.button>

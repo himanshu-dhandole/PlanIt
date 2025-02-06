@@ -11,6 +11,8 @@ import RoleSelection from "./components/RoleSelection/SelectRole.jsx";
 import OrganizerSearchpage from "./components/Organizers/organizerSearchpage.jsx";
 import Organizer from "./components/Organizers/organizer.jsx";
 import ServiceSelection from "./components/ServiceProviders/SelectServicePage.jsx";
+import CaterersSearchPage from "./components/ServiceProviders/CaterersPage.jsx";
+import OrganizerDashboard from "./components/Organizers/OrganizerDashboard.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path:"/serviceproviders",
         element:<ServiceSelection/>
+      },
+      {
+        path:"/services/caterers",
+        element:<CaterersSearchPage/>
+      },
+      {
+        path: "/organizerdashboard",
+        element: <OrganizerDashboard/>,
       }
     ]
   },

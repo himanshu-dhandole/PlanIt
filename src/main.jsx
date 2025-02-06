@@ -8,6 +8,8 @@ import Signup from "./components/Auth/Signup.jsx";
 import Login from "./components/Auth/Login.jsx";
 import Home from "./components/Home/Home.jsx";
 import RoleSelection from "./components/RoleSelection/SelectRole.jsx";
+import OrganizerSearchpage from "./components/Organizers/organizerSearchpage.jsx";
+import Organizer from "./components/Organizers/organizer.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
       {
         path:"/roles",
         element:<RoleSelection/>
+      },
+      {
+        path:"/organizersearchpage",
+        element:<OrganizerSearchpage/>
+      },
+      {
+        path:"/organizer",
+        element:<Organizer/>
       }
     ]
   },

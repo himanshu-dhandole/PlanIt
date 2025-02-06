@@ -10,6 +10,7 @@ import Home from "./components/Home/Home.jsx";
 import RoleSelection from "./components/RoleSelection/SelectRole.jsx";
 import OrganizerSearchpage from "./components/Organizers/organizerSearchpage.jsx";
 import Organizer from "./components/Organizers/organizer.jsx";
+import ServiceSelection from "./components/ServiceProviders/SelectServicePage.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path:"/organizer",
         element:<Organizer/>
+      },
+      {
+        path:"/serviceproviders",
+        element:<ServiceSelection/>
       }
     ]
   },

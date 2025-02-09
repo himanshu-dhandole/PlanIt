@@ -29,7 +29,7 @@ export default function Footer() {
         Dashboards: [
             { name: 'Admin Dashboard', path: '/admin' },
             { name: 'Organizer Dashboard', path: '/organizerdashboard' },
-            { name: 'Analytics Dashboard', path: '/dashboards/analytics' },
+            { name: 'User Profile', path: '/profile' },
         ],
     };
 

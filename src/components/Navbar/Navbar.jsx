@@ -66,7 +66,7 @@ export default function Header() {
     { name: "Home", path: "/" },
     { name: "Organizers", path: "/organizersearchpage" },
     { name: "Services", path: "/serviceproviders" },
-    { name: "chat", path: "/chat" },
+    { name: "Chat", path: "/chat" },
   ].map((link) => (
     <NavLink
       key={link.name}
